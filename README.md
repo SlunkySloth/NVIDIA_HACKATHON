@@ -1,5 +1,7 @@
 # ReplayLab
 
+[![Verify ReplayLab](https://github.com/SlunkySloth/NVIDIA_HACKATHON/actions/workflows/verify.yml/badge.svg)](https://github.com/SlunkySloth/NVIDIA_HACKATHON/actions/workflows/verify.yml)
+
 ReplayLab reproduces synthetic webhook incidents, compares a candidate patch
 against independent business checks, and exports replayable evidence. The local
 demo includes duplicate credit grants, repeated fulfillment, and stale subscription
@@ -10,11 +12,15 @@ patch. It makes no model calls. The flawed comparison demonstrates why a regress
 alone is insufficient: in-memory deduplication passes duplicate delivery but fails
 after a process restart.
 
-See [current status](docs/status.md), [architecture](docs/architecture.md),
+See [current status](docs/status.md), [verified prerelease](docs/release-verification.md), [architecture](docs/architecture.md),
 [supported inputs](docs/supported-inputs.md), [evaluation evidence](docs/evaluation.md),
 and [Nebius setup/deployment](docs/nebius-setup.md).
 
 ![A completed local replay: the original grants 200 credits while the reference patch grants 100](docs/screenshots/replay-comparison.png)
+
+[Watch the narrated local reference walkthrough](https://github.com/SlunkySloth/NVIDIA_HACKATHON/releases/download/v0.1.0-prelive/replaylab-reference-demo.mp4).
+It shows actual service execution and a human-authored patch, with zero inference.
+Live provider verification and a public hosted application are still pending.
 
 ## Run the local demo
 

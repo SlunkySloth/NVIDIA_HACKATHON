@@ -39,5 +39,9 @@ Before publishing a final live clip, watch it with sound, confirm the exact run
 matches its evidence, check spoken NVIDIA/Nebius attribution, and confirm it
 contains no private account configuration. Upload the live clip to a public
 YouTube video from the owner's account, then test its URL signed out. No public
-upload or final qualifying live video exists yet. An initial local reference
+YouTube upload or final qualifying live video exists yet. An initial local reference
 clip is useful for reviewing the explanation while account access is pending.
+
+The completed [reference walkthrough preview](https://github.com/SlunkySloth/NVIDIA_HACKATHON/releases/download/v0.1.0-prelive/replaylab-reference-demo.mp4)
+is 1 minute 50 seconds long, with original narration, exact run evidence, and
+explicit labels for reference execution and compressed waiting.
