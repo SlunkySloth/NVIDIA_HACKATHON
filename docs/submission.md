@@ -57,7 +57,7 @@ the corresponding release gates pass.
 
 | Requirement | Concrete artifact/gate | Current state |
 | --- | --- | --- |
-| Public source with open-source license | [Repository](https://github.com/SlunkySloth/NVIDIA_HACKATHON), MIT LICENSE, reproducible README | Source prepared locally; publication must be verified |
+| Public source with open-source license | [Repository](https://github.com/SlunkySloth/NVIDIA_HACKATHON), MIT LICENSE, reproducible README | Published source and MIT license verified |
 | Runtime Nebius and NVIDIA usage | Passing live preflight and actual model/operation IDs in evidence | Account setup required |
 | Working demo URL | Persistent HTTPS host with tested fresh live run and saved recordings | Compute account, domain and budget required |
 | Demonstration video | Actual workflow, spoken sponsor attribution, less than three minutes, public YouTube URL | Local recording tooling prepared; live capture/publication required |

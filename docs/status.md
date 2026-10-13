@@ -33,7 +33,8 @@ infrastructure or repeatability failures and all defective sources rejected.
 The frozen holdout reference baseline reproduced six defects and verified six
 reference repairs; both clean controls were unchanged. These are human-authored
 reference results, with zero model inference calls. The README screenshot is an
-actual reference run. The recorded ZIPs preserve dirty-checkout capture metadata.
+actual reference run. The refreshed eight-case ZIPs identify clean public revision `a9b900a`; earlier
+dirty-development results are retained separately.
 
 ## External release gates
 
@@ -45,7 +46,7 @@ actual reference run. The recorded ZIPs preserve dirty-checkout capture metadata
 | Persistent public demo | Nebius project/subnet, domain, hosting budget, HTTPS and fresh live run | Prepared configuration; not provisioned |
 | External user feedback | Observed sessions and actual feedback log | Zero sessions |
 | Submission video | Actual live workflow, spoken attribution, public YouTube URL below three minutes | Narrated 1:50 local reference walkthrough captured; live publication pending |
-| Source publication/CI | Clean public revision and passing hosted workflow | Source prepared; publication pending |
+| Source publication/CI | Clean public revision and passing hosted workflow | Published on GitHub; hosted workflow running |
 | Devpost submission | Verified links, team details and submission confirmation | Pending owner account access |
 
 Follow [Nebius setup](nebius-setup.md), [live evaluation](live-evaluation.md),

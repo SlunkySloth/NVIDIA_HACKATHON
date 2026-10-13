@@ -14,10 +14,12 @@ from replaylab.verification.oracle import verify
 
 
 def execute(image, payload):
-    command = ["docker", "run", "--rm", "-i", "--network", "none", "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,size=256m", "--memory", "1g", "--pids-limit", "128", "--cap-drop", "ALL", "--cap-add", "CHOWN", "--cap-add", "SETUID", "--cap-add", "SETGID", "--cap-add", "DAC_OVERRIDE", image]
+    # The trusted observer needs KILL to stop its children after dropping their
+    # UID; the non-root application container still has all capabilities dropped.
+    command = ["docker", "run", "--rm", "-i", "--network", "none", "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,size=256m", "--memory", "1g", "--pids-limit", "128", "--cap-drop", "ALL", "--cap-add", "CHOWN", "--cap-add", "SETUID", "--cap-add", "SETGID", "--cap-add", "DAC_OVERRIDE", "--cap-add", "KILL", image]
     result = subprocess.run(command, input=json.dumps(payload), capture_output=True, text=True, timeout=60, check=False)
     if result.returncode:
-        raise RuntimeError(f"observer container exited with status {result.returncode}")
+        raise RuntimeError(f"credential-free observer container exited with status {result.returncode}: {result.stderr[-6000:]}")
     return json.loads(result.stdout)
 
 

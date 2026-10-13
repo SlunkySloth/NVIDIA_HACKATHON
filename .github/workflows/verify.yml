@@ -39,11 +39,6 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Browser investigation checks
         run: npm run test:e2e --prefix apps/web
-      - name: Validate application and observer containers
-        run: |
-          docker build -f deploy/app.Dockerfile -t replaylab-app:test .
-          docker build -f deploy/sandbox.Dockerfile -t replaylab-sandbox:test .
-          PYTHONPATH=backend .venv/bin/python scripts/container_smoke.py
       - uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -52,6 +47,23 @@ jobs:
             apps/web/test-results/
             docs/screenshots/replay-comparison.png
           if-no-files-found: ignore
+  containers:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install reviewed Python dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.lock
+      - name: Validate application and observer containers
+        run: |
+          docker build -f deploy/app.Dockerfile -t replaylab-app:test .
+          docker build -f deploy/sandbox.Dockerfile -t replaylab-sandbox:test .
+          PYTHONPATH=backend .venv/bin/python scripts/container_smoke.py
   infrastructure:
     runs-on: ubuntu-24.04
     timeout-minutes: 5

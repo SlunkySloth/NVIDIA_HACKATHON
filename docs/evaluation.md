@@ -34,15 +34,15 @@ and generated challenge IDs. The reproduction command retains generator version
 independently authored revisions: six defective cases and two clean controls.
 Every defective case was reproduced and its human-authored reference repair
 verified; both clean controls were left unchanged. There were no inconclusive
-or unattempted cases. Total elapsed time was 176.712 seconds on this machine.
+or unattempted cases. Total elapsed time was 136.382 seconds on this machine.
 The report records the frozen dataset hash and exact per-run evidence hashes;
 the eight original ZIPs are retained in `evals/holdout-reference-evidence/`.
 
 This is a **reference baseline**, with zero inference calls and no remote
-Sandbox execution. Source manifests identify the dirty development checkout
-at capture time; exact handler/test bytes and their hashes are preserved inside
-the archives. Checking out the initial planning commit alone does not reproduce
-that observer build. Live model evaluation remains pending account setup;
+Sandbox execution. All eight source manifests identify clean public revision `a9b900a`. Exact
+handler/test bytes and their hashes are preserved inside the archives. The earlier
+dirty-development result remains in `evals/holdout-reference-development.json`
+with its original evidence for provenance. Live model evaluation remains pending account setup;
 [the protocol](live-evaluation.md) defines budgets, honest denominators,
 clean controls, timings, usage and failure retention.
 
