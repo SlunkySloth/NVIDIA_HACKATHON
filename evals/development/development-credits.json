@@ -1,0 +1,56 @@
+{
+  "name": "development-credits",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "sample-credits",
+    "symptom": "A customer bought 100 credits but received 200.",
+    "fixture_id": "credits",
+    "revision": "4f8621083c40b59580aaa24d023aacdcbe316cfbee6717d081ab654ec2c8ac72",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {},
+    "initial_state_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "evt_001",
+        "entity_id": "customer_01",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 100
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "evt_001",
+        "entity_id": "customer_01",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 100
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "credits-v1",
+      "version": "1",
+      "fixture_id": "credits",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_credit",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique purchase event grants its stated credits once.",
+        "Distinct purchases with equal amounts both grant credits.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Customer balances remain independent."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

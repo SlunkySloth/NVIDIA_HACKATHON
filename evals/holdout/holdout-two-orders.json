@@ -1,0 +1,61 @@
+{
+  "name": "holdout-two-orders",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "holdout-two-orders",
+    "symptom": "A second paid order was acknowledged without fulfillment.",
+    "fixture_id": "fulfillment",
+    "revision": "de8b00682f147d4d47a5d229989ae4a93b52b22738e5bfe823eb42ce3b4f843a",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {},
+    "initial_state_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "payment_a",
+        "entity_id": "order_a",
+        "event_type": "order.paid",
+        "payload": {},
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "payment_b",
+        "entity_id": "order_b",
+        "event_type": "order.paid",
+        "payload": {},
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 2,
+        "event_id": "payment_a",
+        "entity_id": "order_a",
+        "event_type": "order.paid",
+        "payload": {},
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "fulfillment-v1",
+      "version": "1",
+      "fixture_id": "fulfillment",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_fulfillment",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique paid event creates one local fulfillment.",
+        "Distinct paid events both create fulfillment records.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Orders remain independent; external shipment is outside scope."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

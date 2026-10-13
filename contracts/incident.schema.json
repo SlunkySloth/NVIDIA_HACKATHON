@@ -1,0 +1,243 @@
+{
+  "$defs": {
+    "BehaviorContract": {
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "maxLength": 100,
+          "title": "Id",
+          "type": "string"
+        },
+        "version": {
+          "const": "1",
+          "default": "1",
+          "title": "Version",
+          "type": "string"
+        },
+        "fixture_id": {
+          "enum": [
+            "credits",
+            "fulfillment",
+            "subscriptions"
+          ],
+          "title": "Fixture Id",
+          "type": "string"
+        },
+        "approved": {
+          "default": false,
+          "title": "Approved",
+          "type": "boolean"
+        },
+        "deduplication_key": {
+          "const": "event_id",
+          "default": "event_id",
+          "title": "Deduplication Key",
+          "type": "string"
+        },
+        "semantics": {
+          "enum": [
+            "unique_event_credit",
+            "unique_event_fulfillment",
+            "highest_entity_version"
+          ],
+          "title": "Semantics",
+          "type": "string"
+        },
+        "acknowledgement_status": {
+          "const": 200,
+          "default": 200,
+          "title": "Acknowledgement Status",
+          "type": "integer"
+        },
+        "rules": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 12,
+          "minItems": 1,
+          "title": "Rules",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "fixture_id",
+        "semantics",
+        "rules"
+      ],
+      "title": "BehaviorContract",
+      "type": "object"
+    },
+    "Delivery": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "delivery",
+          "default": "delivery",
+          "title": "Kind",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 0,
+          "title": "Sequence",
+          "type": "integer"
+        },
+        "event_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Event Id",
+          "type": "string"
+        },
+        "entity_id": {
+          "maxLength": 100,
+          "minLength": 1,
+          "pattern": "^[\\w.-]+$",
+          "title": "Entity Id",
+          "type": "string"
+        },
+        "event_type": {
+          "maxLength": 80,
+          "title": "Event Type",
+          "type": "string"
+        },
+        "payload": {
+          "additionalProperties": true,
+          "title": "Payload",
+          "type": "object"
+        },
+        "arrival_time": {
+          "format": "date-time",
+          "title": "Arrival Time",
+          "type": "string"
+        }
+      },
+      "required": [
+        "sequence",
+        "event_id",
+        "entity_id",
+        "event_type",
+        "payload",
+        "arrival_time"
+      ],
+      "title": "Delivery",
+      "type": "object"
+    },
+    "Restart": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "const": "restart",
+          "default": "restart",
+          "title": "Kind",
+          "type": "string"
+        },
+        "sequence": {
+          "minimum": 0,
+          "title": "Sequence",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "sequence"
+      ],
+      "title": "Restart",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1",
+      "default": "1",
+      "title": "Schema Version",
+      "type": "string"
+    },
+    "incident_id": {
+      "maxLength": 100,
+      "minLength": 1,
+      "title": "Incident Id",
+      "type": "string"
+    },
+    "symptom": {
+      "maxLength": 500,
+      "minLength": 1,
+      "title": "Symptom",
+      "type": "string"
+    },
+    "fixture_id": {
+      "enum": [
+        "credits",
+        "fulfillment",
+        "subscriptions"
+      ],
+      "title": "Fixture Id",
+      "type": "string"
+    },
+    "revision": {
+      "pattern": "^[a-f0-9]{64}$",
+      "title": "Revision",
+      "type": "string"
+    },
+    "runtime_build": {
+      "const": "deploy/sandbox.Dockerfile",
+      "default": "deploy/sandbox.Dockerfile",
+      "title": "Runtime Build",
+      "type": "string"
+    },
+    "initial_state": {
+      "additionalProperties": true,
+      "title": "Initial State",
+      "type": "object"
+    },
+    "initial_state_hash": {
+      "title": "Initial State Hash",
+      "type": "string"
+    },
+    "steps": {
+      "items": {
+        "anyOf": [
+          {
+            "$ref": "#/$defs/Delivery"
+          },
+          {
+            "$ref": "#/$defs/Restart"
+          }
+        ]
+      },
+      "maxItems": 32,
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "contract": {
+      "$ref": "#/$defs/BehaviorContract"
+    },
+    "provenance": {
+      "enum": [
+        "original synthetic fixture",
+        "sanitized local import"
+      ],
+      "title": "Provenance",
+      "type": "string"
+    },
+    "redacted": {
+      "const": true,
+      "default": true,
+      "title": "Redacted",
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "incident_id",
+    "symptom",
+    "fixture_id",
+    "revision",
+    "initial_state_hash",
+    "steps",
+    "contract",
+    "provenance"
+  ],
+  "title": "IncidentBundle",
+  "type": "object"
+}

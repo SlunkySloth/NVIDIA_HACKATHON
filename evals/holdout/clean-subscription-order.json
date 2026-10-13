@@ -1,0 +1,74 @@
+{
+  "name": "clean-subscription-order",
+  "defective": false,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "clean-subscription-order",
+    "symptom": "Inspect a subscription update sequence that retained the latest state.",
+    "fixture_id": "subscriptions",
+    "revision": "b0b7a577ad0bd721e8f5be77846c35c796c27996f6e24fb5e4f0e30b558adb60",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {},
+    "initial_state_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "update_a",
+        "entity_id": "account_c",
+        "event_type": "subscription.updated",
+        "payload": {
+          "version": 4,
+          "status": "cancelled"
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "update_b",
+        "entity_id": "account_c",
+        "event_type": "subscription.updated",
+        "payload": {
+          "version": 4,
+          "status": "active"
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "restart",
+        "sequence": 2
+      },
+      {
+        "kind": "delivery",
+        "sequence": 3,
+        "event_id": "update_b",
+        "entity_id": "account_c",
+        "event_type": "subscription.updated",
+        "payload": {
+          "version": 4,
+          "status": "active"
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "subscriptions-v1",
+      "version": "1",
+      "fixture_id": "subscriptions",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "highest_entity_version",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Only a strictly higher entity version replaces subscription state.",
+        "A stale event must not roll state back.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Versions persist through restarts.",
+        "Versions are explicit fixture semantics; timestamps are not versions."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

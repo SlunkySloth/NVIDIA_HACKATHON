@@ -1,0 +1,54 @@
+{
+  "name": "holdout-independent-ledgers",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "holdout-independent-ledgers",
+    "symptom": "A paid order increased another order's fulfillment count.",
+    "fixture_id": "fulfillment",
+    "revision": "90bcf392ea82d4ea9dcef7ce063559f8381c18da5d42e51e1c8bbae498702cf2",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {
+      "order_a": 3
+    },
+    "initial_state_hash": "31991f9ef30db5348a770e6366a22671311e1ce49457575ecac84093ddcece40",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "payment_b",
+        "entity_id": "order_b",
+        "event_type": "order.paid",
+        "payload": {},
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "payment_a",
+        "entity_id": "order_a",
+        "event_type": "order.paid",
+        "payload": {},
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "fulfillment-v1",
+      "version": "1",
+      "fixture_id": "fulfillment",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_fulfillment",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique paid event creates one local fulfillment.",
+        "Distinct paid events both create fulfillment records.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Orders remain independent; external shipment is outside scope."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

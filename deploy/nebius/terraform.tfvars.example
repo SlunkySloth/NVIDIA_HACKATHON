@@ -1,0 +1,5 @@
+project_id     = "project-replace-with-your-project"
+subnet_id      = "vpcsubnet-replace-with-your-subnet"
+domain         = "demo.example.com"
+ssh_public_key = "ssh-ed25519 REPLACE_WITH_PUBLIC_KEY"
+git_ref        = "main"

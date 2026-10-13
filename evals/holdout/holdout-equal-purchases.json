@@ -1,0 +1,69 @@
+{
+  "name": "holdout-equal-purchases",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "holdout-equal-purchases",
+    "symptom": "Two paid purchases of equal size added credits only once.",
+    "fixture_id": "credits",
+    "revision": "c16da8612ab9a6bfcfa57d561cf6a4533049bc98d4a1d5ebf32756e104e2722c",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {
+      "customer_42": 13
+    },
+    "initial_state_hash": "3de0064f9ca113cdc26fbf103003f877494e3c752e971e8470602c4302551232",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "purchase_equal_a",
+        "entity_id": "customer_42",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 45
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "purchase_equal_b",
+        "entity_id": "customer_42",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 45
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 2,
+        "event_id": "purchase_equal_a",
+        "entity_id": "customer_42",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 45
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "credits-v1",
+      "version": "1",
+      "fixture_id": "credits",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_credit",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique purchase event grants its stated credits once.",
+        "Distinct purchases with equal amounts both grant credits.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Customer balances remain independent."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

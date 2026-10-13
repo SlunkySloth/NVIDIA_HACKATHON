@@ -1,0 +1,11 @@
+{$REPLAYLAB_DOMAIN} {
+    encode zstd gzip
+    header {
+        X-Content-Type-Options nosniff
+        Referrer-Policy same-origin
+        Strict-Transport-Security "max-age=31536000"
+    }
+    reverse_proxy app:8000 {
+        flush_interval -1
+    }
+}

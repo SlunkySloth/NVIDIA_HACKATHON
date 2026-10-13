@@ -1,0 +1,17 @@
+.recordings-panel { margin: 30px 0; }
+.recordings-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.recording-card { text-align: left; display: flex; flex-direction: column; align-items: flex-start; gap: 13px; padding: 20px; background: #fff; border: 1px solid #dfe7d9; border-radius: 8px; }
+.recording-card:hover { border-color: #92ac7f; background: #fbfdf8; }
+.recording-card strong { font-size: 13px; line-height: 1.7; color: #284632; }
+.recording-card > span:last-child { width: 100%; display: flex; justify-content: space-between; align-items: center; font-size: 11px; color: #65834f; }
+.recorded-notice { display: flex; align-items: center; gap: 16px; padding: 20px; background: #f2f6eb; border: 1px solid #dce7cc; border-radius: 8px; margin-bottom: 22px; color: #59724a; }
+.recorded-notice > svg { flex-shrink: 0; }
+.recorded-notice > div { flex: 1; }
+.recorded-notice strong { font-size: 13px; }
+.recorded-notice p { margin: 7px 0 0; font-size: 11px; line-height: 1.9; color: #728369; }
+@media (max-width: 720px) {
+  .recordings-grid { grid-template-columns: 1fr; }
+  .recorded-notice { align-items: flex-start; flex-wrap: wrap; }
+  .recorded-notice > div { min-width: 180px; }
+  .recorded-notice .button { margin-left: 32px; }
+}

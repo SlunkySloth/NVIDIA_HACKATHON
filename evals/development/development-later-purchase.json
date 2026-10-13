@@ -1,0 +1,56 @@
+{
+  "name": "development-later-purchase",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "development-later-purchase",
+    "symptom": "A customer's later purchase did not add its credits.",
+    "fixture_id": "credits",
+    "revision": "5262fc12238ea712f0112c9111cdca8c3e4cb037aaa11a982a17c00c5e295d83",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {},
+    "initial_state_hash": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "dev_purchase_a",
+        "entity_id": "dev_customer",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 20
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "delivery",
+        "sequence": 1,
+        "event_id": "dev_purchase_b",
+        "entity_id": "dev_customer",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 75
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "credits-v1",
+      "version": "1",
+      "fixture_id": "credits",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_credit",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique purchase event grants its stated credits once.",
+        "Distinct purchases with equal amounts both grant credits.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Customer balances remain independent."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

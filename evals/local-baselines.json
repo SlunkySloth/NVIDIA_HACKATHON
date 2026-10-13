@@ -1,0 +1,6137 @@
+{
+  "kind": "authored synthetic development baselines; no model repair measured",
+  "scenario_generator_version": "2",
+  "repeats": 2,
+  "elapsed_seconds": 328.706,
+  "scenario_source_pairs": 139,
+  "inconclusive_pairs": 0,
+  "reference_failures": 0,
+  "unrejected_defective_sources": [],
+  "nondeterministic_pairs": 0,
+  "results": [
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "a5cff84c953252af66028e6f3291ed48850967757ce56b3af9e6964764f6b741",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "a5cff84c953252af66028e6f3291ed48850967757ce56b3af9e6964764f6b741",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "7339f3882b0b51a12b57858cefe33964cb385711ce37ed56c89b9b5535504c9f",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 300
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "7339f3882b0b51a12b57858cefe33964cb385711ce37ed56c89b9b5535504c9f",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 300
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "c6f575d50d44f92979ac68bbfe7450e8b240812f3f881b262d994bc7c5d14bd0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "challenge_customer_02": 100,
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "challenge_customer_02": 200,
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "c6f575d50d44f92979ac68bbfe7450e8b240812f3f881b262d994bc7c5d14bd0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "challenge_customer_02": 100,
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "challenge_customer_02": 200,
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "401bc1e6a37e24f54953ea1411751f1372768b19e090a19754cd8ff505ebb45c",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "401bc1e6a37e24f54953ea1411751f1372768b19e090a19754cd8ff505ebb45c",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "5a7453946be67b03f568577db4d696bf7033a113f41f6e4f48bc39366f9e6bc5",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "final_entity_a": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 148
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "5a7453946be67b03f568577db4d696bf7033a113f41f6e4f48bc39366f9e6bc5",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "final_entity_a": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 148
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "original",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "94b69273fc526d1f39d624f2263684ecc7d46b96da60f55e7f5f24b04f5e7b49",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 74,
+                  "final_entity_b": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "94b69273fc526d1f39d624f2263684ecc7d46b96da60f55e7f5f24b04f5e7b49",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 74,
+                  "final_entity_b": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "c3301ccd550d8a428a40f3feaf6918cf72502d99e0b3fb825503ed0c799513d5",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "c3301ccd550d8a428a40f3feaf6918cf72502d99e0b3fb825503ed0c799513d5",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "72162d02145cbe92cba1d1518d7169a9cf2c0de52e104357fd7aaf512b180bca",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "72162d02145cbe92cba1d1518d7169a9cf2c0de52e104357fd7aaf512b180bca",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "reference",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "2878050dd8c5fa781194c42550735494ba8b08d11e3b0315d814e24959e14669",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "2878050dd8c5fa781194c42550735494ba8b08d11e3b0315d814e24959e14669",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "c3301ccd550d8a428a40f3feaf6918cf72502d99e0b3fb825503ed0c799513d5",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "c3301ccd550d8a428a40f3feaf6918cf72502d99e0b3fb825503ed0c799513d5",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "401bc1e6a37e24f54953ea1411751f1372768b19e090a19754cd8ff505ebb45c",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "401bc1e6a37e24f54953ea1411751f1372768b19e090a19754cd8ff505ebb45c",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "21b5d2f66d229eb3f4590e7add90f181827159e7c499729c5f2b53e69404b260",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "final_entity_a": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "21b5d2f66d229eb3f4590e7add90f181827159e7c499729c5f2b53e69404b260",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "final_entity_a": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 111
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_memory",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "2878050dd8c5fa781194c42550735494ba8b08d11e3b0315d814e24959e14669",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "2878050dd8c5fa781194c42550735494ba8b08d11e3b0315d814e24959e14669",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "30a24e673769e59e26307c910d463ad423b93a523fa8b13a6a06e9502bf813d0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "30a24e673769e59e26307c910d463ad423b93a523fa8b13a6a06e9502bf813d0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "855ab483ce104acd5ff7ce393f8111df3a83b2dcaa2f7c0a82083abfa174e1c2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "855ab483ce104acd5ff7ce393f8111df3a83b2dcaa2f7c0a82083abfa174e1c2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "67cadd6c594f0e251a8c2e1a419d1897df38dc7d39d5d4e3e35a0bbbc6f4261d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "67cadd6c594f0e251a8c2e1a419d1897df38dc7d39d5d4e3e35a0bbbc6f4261d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_ignore_later",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "3aba3a6d513cbbfd354da3b1e4e41049707befe7186b4de03819f366c3d97987",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "3aba3a6d513cbbfd354da3b1e4e41049707befe7186b4de03819f366c3d97987",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "30a24e673769e59e26307c910d463ad423b93a523fa8b13a6a06e9502bf813d0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "30a24e673769e59e26307c910d463ad423b93a523fa8b13a6a06e9502bf813d0",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "855ab483ce104acd5ff7ce393f8111df3a83b2dcaa2f7c0a82083abfa174e1c2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "855ab483ce104acd5ff7ce393f8111df3a83b2dcaa2f7c0a82083abfa174e1c2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 100
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "67cadd6c594f0e251a8c2e1a419d1897df38dc7d39d5d4e3e35a0bbbc6f4261d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "67cadd6c594f0e251a8c2e1a419d1897df38dc7d39d5d4e3e35a0bbbc6f4261d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_amount",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "3aba3a6d513cbbfd354da3b1e4e41049707befe7186b4de03819f366c3d97987",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "3aba3a6d513cbbfd354da3b1e4e41049707befe7186b4de03819f366c3d97987",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "final_entity_a": 37
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "96559de291c6744cb94d1329600566a8f901928d637931680c9ac254db303a8a",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "d3e08b6e6551466d39f7247d6882ca649273f6d25746917988ef305b41375849",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "346e0c7ab7e8f032f18934a168d9fd8e03a45703e4bcf482f3dc3271deeebbed",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "fbd17b80139efa585bdd1f00488ee0528a319a1d0aef765060e81801c301739c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "7e23a550e7f71f8cb6cf1097cc6f6f0d3f314b700f145e590e72df8ce23a83f1",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "7e23a550e7f71f8cb6cf1097cc6f6f0d3f314b700f145e590e72df8ce23a83f1",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {
+                  "customer_01": 200
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "7fd8bcf24e9dca002d532ec7ba5841f97d0dc7ac22adcee039c5912cb323ba83",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "87d62532c673733b05936a236440ba6675db869b4167fc155d4492986457b888",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "87d62532c673733b05936a236440ba6675db869b4167fc155d4492986457b888",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_entity_shared",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "d1e1445a5991faa150b9541db937665dcb6615d0be4e5a332358370c1a382888",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "d1e1445a5991faa150b9541db937665dcb6615d0be4e5a332358370c1a382888",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {
+                  "customer_01": 37
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {
+                  "customer_01": 74
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "98247f8c3b015f79d46106e6bcb879e45b389d48d799c23624780c63f7029aca",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "98247f8c3b015f79d46106e6bcb879e45b389d48d799c23624780c63f7029aca",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "a043be1b09601a99a68a0bd8840cc7cc783b31208ef46e486e09cc5fc7b21998",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "a043be1b09601a99a68a0bd8840cc7cc783b31208ef46e486e09cc5fc7b21998",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "f4ffe8aac13fbf8c3e25c2b2ecb76001bedf53448760d6495e2a7dcac0fc5c7a",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "f4ffe8aac13fbf8c3e25c2b2ecb76001bedf53448760d6495e2a7dcac0fc5c7a",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "0efa7da915139cce62a1f5127651f63a0271f41bc6224d1186413681501639a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "0efa7da915139cce62a1f5127651f63a0271f41bc6224d1186413681501639a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 200
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "b2b4a3167d90157716b5681b70473ba81f4d7635037af0a4d22951ec076c9819",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "b2b4a3167d90157716b5681b70473ba81f4d7635037af0a4d22951ec076c9819",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 100,
+                  "challenge_customer_02": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "615c41094fb88f47c63b102037846ff066e0b132271a1c775e0e3c73ca901f99",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "615c41094fb88f47c63b102037846ff066e0b132271a1c775e0e3c73ca901f99",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 100
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "dcbb22db7474801934ac2fd041df6b2f5aa1075c8d8915d3d934f58abf522854",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "dcbb22db7474801934ac2fd041df6b2f5aa1075c8d8915d3d934f58abf522854",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 74
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "credits",
+      "source": "flawed_no_effect",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "2473b4b1f67d2e056201c9d17c16498ce646d558d60f314fcc94ad5fea4655bc",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "2473b4b1f67d2e056201c9d17c16498ce646d558d60f314fcc94ad5fea4655bc",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 37,
+                  "final_entity_b": 37
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "cb69ace4a5a275075f50baef1141eeb62a543fcccc5ab0a675b6aa0ea1120265",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "cb69ace4a5a275075f50baef1141eeb62a543fcccc5ab0a675b6aa0ea1120265",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "c7c5546e7f40ca038fbf9c5d06f8b5deb6669c2f7b7488999c1bfdd8789c299d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 3
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "c7c5546e7f40ca038fbf9c5d06f8b5deb6669c2f7b7488999c1bfdd8789c299d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 3
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "6fe9d89a867cd6d42dc5a0f3e78ecaf60741a129c612cade266c1a1504b907d5",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "challenge_customer_02": 1,
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "challenge_customer_02": 2,
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "6fe9d89a867cd6d42dc5a0f3e78ecaf60741a129c612cade266c1a1504b907d5",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "challenge_customer_02": 1,
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "challenge_customer_02": 2,
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "a2c9352cb4e47ff6640f1f5437ce89ea34bc24d40f18c9b9ef2b058cc7628165",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "a2c9352cb4e47ff6640f1f5437ce89ea34bc24d40f18c9b9ef2b058cc7628165",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "09e7da884a761502d38398808f367fe5f8e6e626a21a5e33ab56607c4706d894",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "final_entity_a": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 4
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "09e7da884a761502d38398808f367fe5f8e6e626a21a5e33ab56607c4706d894",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "final_entity_a": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 4
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "original",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "9d079fbd0231482a479998747ad4b0936f4610515795d46f068073c44fdb1215",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 2,
+                  "final_entity_b": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "9d079fbd0231482a479998747ad4b0936f4610515795d46f068073c44fdb1215",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 2,
+                  "final_entity_b": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "082aeb266261903a3310c9f16070c3e589f8ab06319b8a12810688469a6bb323",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "082aeb266261903a3310c9f16070c3e589f8ab06319b8a12810688469a6bb323",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "22d76ad4e071669e25b2d999be2f4b292d27f3616e7d5054c7d3487bcae138dd",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "22d76ad4e071669e25b2d999be2f4b292d27f3616e7d5054c7d3487bcae138dd",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "reference",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "b27d12b4e8e7b8930f662c7e03ec392528615e74ba0d47c166239eec905ccb4c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "b27d12b4e8e7b8930f662c7e03ec392528615e74ba0d47c166239eec905ccb4c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "082aeb266261903a3310c9f16070c3e589f8ab06319b8a12810688469a6bb323",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "082aeb266261903a3310c9f16070c3e589f8ab06319b8a12810688469a6bb323",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "a2c9352cb4e47ff6640f1f5437ce89ea34bc24d40f18c9b9ef2b058cc7628165",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "a2c9352cb4e47ff6640f1f5437ce89ea34bc24d40f18c9b9ef2b058cc7628165",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "68a1fc1031e4bc8dc7550264bd235d58b605a9626bdd6630da33f7d002df161e",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "final_entity_a": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "68a1fc1031e4bc8dc7550264bd235d58b605a9626bdd6630da33f7d002df161e",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "final_entity_a": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 3
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_memory",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "b27d12b4e8e7b8930f662c7e03ec392528615e74ba0d47c166239eec905ccb4c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "b27d12b4e8e7b8930f662c7e03ec392528615e74ba0d47c166239eec905ccb4c",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "4a7e41c1ee3677c96e8f7f4515eadc506bb46d7d750786d7888fd06e8e92b1ad",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "4a7e41c1ee3677c96e8f7f4515eadc506bb46d7d750786d7888fd06e8e92b1ad",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "955db8da46d7d4320c004850018be12ee4cd4ad1fca5a636adcbaef714e109f7",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "955db8da46d7d4320c004850018be12ee4cd4ad1fca5a636adcbaef714e109f7",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "c85f34f35743e20c51c6dcc046698b3dcff3c5e5c976cb462de1ffda0ff7067d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "c85f34f35743e20c51c6dcc046698b3dcff3c5e5c976cb462de1ffda0ff7067d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_ignore_later",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "80914e0f1d899da135853fd3591aa7ff721fa3568eb1dac5074ba048d9dbe5dd",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "80914e0f1d899da135853fd3591aa7ff721fa3568eb1dac5074ba048d9dbe5dd",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "4a7e41c1ee3677c96e8f7f4515eadc506bb46d7d750786d7888fd06e8e92b1ad",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "4a7e41c1ee3677c96e8f7f4515eadc506bb46d7d750786d7888fd06e8e92b1ad",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "955db8da46d7d4320c004850018be12ee4cd4ad1fca5a636adcbaef714e109f7",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "955db8da46d7d4320c004850018be12ee4cd4ad1fca5a636adcbaef714e109f7",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "c85f34f35743e20c51c6dcc046698b3dcff3c5e5c976cb462de1ffda0ff7067d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "c85f34f35743e20c51c6dcc046698b3dcff3c5e5c976cb462de1ffda0ff7067d",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_amount",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "80914e0f1d899da135853fd3591aa7ff721fa3568eb1dac5074ba048d9dbe5dd",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "80914e0f1d899da135853fd3591aa7ff721fa3568eb1dac5074ba048d9dbe5dd",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "final_entity_a": 1
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "eb5a4c8504e2e9e1af66112694df7f381019583a8838cf0c97671e026a77aab2",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "0a962960bcaac8f49b166b37075bbc84ea5f17b7b43236d74118e6be344f7c3f",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "20740858db20e73ea369fc354841c31afb21444dd1a6fc00f9caf948dd16a78e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bed5e9d4fbd46be8ebc30b24ab11cda4fa0ba0e4e011c213fd32be61448cc636",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "c862f7e85286d588bdc986ea0ccafbba3c526fc7b1c0eacbd7bcfd3e4f1d1ea4",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "c862f7e85286d588bdc986ea0ccafbba3c526fc7b1c0eacbd7bcfd3e4f1d1ea4",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "02aa6f77b0b9c355dd25c07652510cf3bd66627e74a6ab48280a11ee18a5cad0",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "172a2f0dea2836031d2cae9af651b1958b061ad064ef1f36fe62ac79b7d4ad33",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "172a2f0dea2836031d2cae9af651b1958b061ad064ef1f36fe62ac79b7d4ad33",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_entity_shared",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "91fcdb3202b8e809c3699c0225b30578da442b9688940d9176db7026bfc08023",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "91fcdb3202b8e809c3699c0225b30578da442b9688940d9176db7026bfc08023",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {
+                  "customer_01": 1
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {
+                  "customer_01": 2
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "98247f8c3b015f79d46106e6bcb879e45b389d48d799c23624780c63f7029aca",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "98247f8c3b015f79d46106e6bcb879e45b389d48d799c23624780c63f7029aca",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "a043be1b09601a99a68a0bd8840cc7cc783b31208ef46e486e09cc5fc7b21998",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "a043be1b09601a99a68a0bd8840cc7cc783b31208ef46e486e09cc5fc7b21998",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "f4ffe8aac13fbf8c3e25c2b2ecb76001bedf53448760d6495e2a7dcac0fc5c7a",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "f4ffe8aac13fbf8c3e25c2b2ecb76001bedf53448760d6495e2a7dcac0fc5c7a",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "0efa7da915139cce62a1f5127651f63a0271f41bc6224d1186413681501639a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "0efa7da915139cce62a1f5127651f63a0271f41bc6224d1186413681501639a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "b2b4a3167d90157716b5681b70473ba81f4d7635037af0a4d22951ec076c9819",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "b2b4a3167d90157716b5681b70473ba81f4d7635037af0a4d22951ec076c9819",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "customer_01": 1,
+                  "challenge_customer_02": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "615c41094fb88f47c63b102037846ff066e0b132271a1c775e0e3c73ca901f99",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "615c41094fb88f47c63b102037846ff066e0b132271a1c775e0e3c73ca901f99",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "dcbb22db7474801934ac2fd041df6b2f5aa1075c8d8915d3d934f58abf522854",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "dcbb22db7474801934ac2fd041df6b2f5aa1075c8d8915d3d934f58abf522854",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 3,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 4,
+                "expected": {
+                  "final_entity_a": 2
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "fulfillment",
+      "source": "flawed_no_effect",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "2473b4b1f67d2e056201c9d17c16498ce646d558d60f314fcc94ad5fea4655bc",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "2473b4b1f67d2e056201c9d17c16498ce646d558d60f314fcc94ad5fea4655bc",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 0,
+                "expected": {
+                  "final_entity_a": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 1,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "final_entity_a": 1,
+                  "final_entity_b": 1
+                },
+                "actual": {},
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "6b9d795cbdf31efd6051eda2fde701d1caab5d5d93593d43d5177d4ddb7e50a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 2,
+                    "status": "cancelled"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "6b9d795cbdf31efd6051eda2fde701d1caab5d5d93593d43d5177d4ddb7e50a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 2,
+                    "status": "cancelled"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "reordered",
+      "repeats": [
+        {
+          "trace_hash": "3d8438da6541ccef227637f5f13f1a1be1c191cee6d4bbd2ffd0c5c34fd74447",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "cancelled",
+                    "version": 2
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "3d8438da6541ccef227637f5f13f1a1be1c191cee6d4bbd2ffd0c5c34fd74447",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "cancelled",
+                    "version": 2
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "original",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "f621caa18fe1018c28a8d56b83d191ce3fd996b584b1e4e512eca8a12f055840",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "f621caa18fe1018c28a8d56b83d191ce3fd996b584b1e4e512eca8a12f055840",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "reordered",
+      "repeats": [
+        {
+          "trace_hash": "c41ba9c5bb569e6e912a88f2e8952b4152c80182ca89d482a82b981b7f57b92e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "c41ba9c5bb569e6e912a88f2e8952b4152c80182ca89d482a82b981b7f57b92e",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "reference",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "incident",
+      "repeats": [
+        {
+          "trace_hash": "6b9d795cbdf31efd6051eda2fde701d1caab5d5d93593d43d5177d4ddb7e50a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 2,
+                    "status": "cancelled"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "6b9d795cbdf31efd6051eda2fde701d1caab5d5d93593d43d5177d4ddb7e50a2",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 2,
+                    "status": "cancelled"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "single",
+      "repeats": [
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "8876e3dfb0e4eb8d78b2feb1875a8d881a5c11f229676f2ca764e44c4ac2a5c4",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "duplicate",
+      "repeats": [
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "bb20582703af6d2c4a462f46842dcc387034baed6d413c564ab98935fe6328b9",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "legitimate",
+      "repeats": [
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "627a635f94a13d666ede10c25d0146f8f30e0a13885213bc2137dbd238c76fe1",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "interleaved",
+      "repeats": [
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "727e75cc6841c250f49dbc0f33a457d1806119c795be7d309e74fadca88c3b41",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "restart",
+      "repeats": [
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "54ccaf3500d2ea2aa855c511b9319551c3293a5605dd455a240282f490413605",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "reordered",
+      "repeats": [
+        {
+          "trace_hash": "3d8438da6541ccef227637f5f13f1a1be1c191cee6d4bbd2ffd0c5c34fd74447",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "cancelled",
+                    "version": 2
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        },
+        {
+          "trace_hash": "3d8438da6541ccef227637f5f13f1a1be1c191cee6d4bbd2ffd0c5c34fd74447",
+          "check": {
+            "passed": false,
+            "inconclusive": false,
+            "failures": [
+              {
+                "step": 1,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "active",
+                    "version": 1
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              },
+              {
+                "step": 2,
+                "expected": {
+                  "customer_01": {
+                    "version": 3,
+                    "status": "past_due"
+                  }
+                },
+                "actual": {
+                  "customer_01": {
+                    "status": "cancelled",
+                    "version": 2
+                  }
+                },
+                "reason": "business state violates reviewed contract"
+              }
+            ]
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "final_restart",
+      "repeats": [
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "836be246616844596a368af44e0c7f7bc92a890b733b35e3a500c48194177dde",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    },
+    {
+      "fixture": "subscriptions",
+      "source": "flawed_stale_version",
+      "scenario": "final_entities",
+      "repeats": [
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        },
+        {
+          "trace_hash": "44d9f426decbfc5e45103c93e4e9bf2b4752a16be485e4d59fa4af75341c9daa",
+          "check": {
+            "passed": true,
+            "inconclusive": false,
+            "failures": []
+          }
+        }
+      ],
+      "deterministic": true
+    }
+  ]
+}

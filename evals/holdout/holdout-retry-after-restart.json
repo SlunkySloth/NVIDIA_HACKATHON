@@ -1,0 +1,62 @@
+{
+  "name": "holdout-retry-after-restart",
+  "defective": true,
+  "incident": {
+    "schema_version": "1",
+    "incident_id": "holdout-retry-after-restart",
+    "symptom": "A retry after a restart granted the same purchase again.",
+    "fixture_id": "credits",
+    "revision": "ec7bab92728b99b9ffe73e5128d6bc54ec7732f20e9e6076751564c6dfefde77",
+    "runtime_build": "deploy/sandbox.Dockerfile",
+    "initial_state": {
+      "customer_91": 17
+    },
+    "initial_state_hash": "1cd36993071f40bf3b6e621ce0083578f95d4fcb61eea8d21c474bc85a7b0b9e",
+    "steps": [
+      {
+        "kind": "delivery",
+        "sequence": 0,
+        "event_id": "purchase_retry_91",
+        "entity_id": "customer_91",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 37
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      },
+      {
+        "kind": "restart",
+        "sequence": 1
+      },
+      {
+        "kind": "delivery",
+        "sequence": 2,
+        "event_id": "purchase_retry_91",
+        "entity_id": "customer_91",
+        "event_type": "purchase.succeeded",
+        "payload": {
+          "credits": 37
+        },
+        "arrival_time": "2026-09-29T12:00:00Z"
+      }
+    ],
+    "contract": {
+      "id": "credits-v1",
+      "version": "1",
+      "fixture_id": "credits",
+      "approved": true,
+      "deduplication_key": "event_id",
+      "semantics": "unique_event_credit",
+      "acknowledgement_status": 200,
+      "rules": [
+        "Each unique purchase event grants its stated credits once.",
+        "Distinct purchases with equal amounts both grant credits.",
+        "Duplicate delivery acknowledges with HTTP 200.",
+        "Deduplication survives process restarts.",
+        "Customer balances remain independent."
+      ]
+    },
+    "provenance": "original synthetic fixture",
+    "redacted": true
+  }
+}

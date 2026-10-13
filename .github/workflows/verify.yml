@@ -1,0 +1,68 @@
+name: Verify ReplayLab
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  application:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements.lock
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: apps/web/package-lock.json
+      - name: Install reviewed dependencies
+        run: |
+          python -m venv .venv
+          .venv/bin/python -m pip install -r requirements.lock
+          npm ci --prefix apps/web
+      - name: Check release source and Python code
+        run: |
+          python scripts/check_release.py
+          .venv/bin/ruff check backend fixtures tests scripts
+      - name: Backend integration checks
+        run: .venv/bin/pytest -q
+      - name: Build the workspace
+        run: npm run build --prefix apps/web
+      - name: Install browser runtime
+        working-directory: apps/web
+        run: npx playwright install --with-deps chromium
+      - name: Browser investigation checks
+        run: npm run test:e2e --prefix apps/web
+      - name: Validate application and observer containers
+        run: |
+          docker build -f deploy/app.Dockerfile -t replaylab-app:test .
+          docker build -f deploy/sandbox.Dockerfile -t replaylab-sandbox:test .
+          PYTHONPATH=backend .venv/bin/python scripts/container_smoke.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: replaylab-browser-evidence
+          path: |
+            apps/web/test-results/
+            docs/screenshots/replay-comparison.png
+          if-no-files-found: ignore
+  infrastructure:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.16.5"
+      - name: Validate Nebius infrastructure without provisioning
+        working-directory: deploy/nebius
+        run: |
+          terraform init -backend=false -input=false
+          terraform fmt -check
+          terraform validate
